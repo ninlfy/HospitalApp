@@ -1,0 +1,52 @@
+﻿<Page x:Class="HospitalApp.PageEmployee.PatientList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApp.PageEmployee"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Список пациентов">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+            <Label Content="Снилс: " Style="{StaticResource DefaultLabelStyle}" FontSize="18"/>
+            <TextBox TextChanged="SearchBySnilsTxtb_TextChanged" Name="SearchBySnilsTxtb" Style="{StaticResource DefaultTextBoxStyle}" Height="30" Width="250"/>
+            <Label Content="ФИО: " Style="{StaticResource DefaultLabelStyle}" FontSize="18"/>
+            <TextBox TextChanged="SearchByFioTxtb_TextChanged" Name="SearchByFioTxtb" Style="{StaticResource DefaultTextBoxStyle}" Height="30" Width="250"/>
+        </StackPanel>
+        <ListBox Name="PatientListBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="400" Margin="0, 0, 0, 50">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="ФИО: " Style="{StaticResource DefaultHeaderLblForListBox}"/>
+                            <Label Content="{Binding Path=FullName}" Style="{StaticResource DefaultLblForListBox}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Дата рождения: " Style="{StaticResource DefaultHeaderLblForListBox}"/>
+                            <Label Content="{Binding Path=DateBirth}" Style="{StaticResource DefaultLblForListBox}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Хронические заболевания: " Style="{StaticResource DefaultHeaderLblForListBox}"/>
+                            <Label Content="{Binding Path=ChronicalId}" Style="{StaticResource DefaultLblForListBox}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Диспансеризация: " Style="{StaticResource DefaultHeaderLblForListBox}"/>
+                            <Label Content="{Binding Path=DispensaryId}" Style="{StaticResource DefaultLblForListBox}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="СНИЛС: " Style="{StaticResource DefaultHeaderLblForListBox}"/>
+                            <Label Content="{Binding Path=Snils}" Style="{StaticResource DefaultLblForListBox}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Content="Удалить" Name="DeleteBtn" Click="DeleteBtn_Click" Width="250" Height="50" Style="{StaticResource DefaultButtonStyle}" Margin="10, 0, 10, 50"/>
+            <Button Content="Изменить" Name="EditBtn" Click="EditBtn_Click" Width="250" Height="50" Style="{StaticResource DefaultButtonStyle}" Margin="10, 0, 10, 50"/>
+            <Button Content="Добавить" Name="AddBtn" Click="AddBtn_Click" Width="250" Height="50" Style="{StaticResource DefaultButtonStyle}" Margin="10, 0, 10, 50"/>
+        </StackPanel>
+    </Grid>
+</Page>

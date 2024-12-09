@@ -1,0 +1,29 @@
+﻿<Page x:Class="HospitalApp.PageEmployee.AddAppointment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApp.PageEmployee"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Запись на прием">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 50, 0, 0">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Специализация врача:" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource DefaultLabelStyleForCreateAccount}"/>
+                <Label Content="Дата приема:" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource DefaultLabelStyleForCreateAccount}"/>
+                <Label Content="Время приема:" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource DefaultLabelStyleForCreateAccount}"/>
+                <Label Content="СНИЛС клиента:" HorizontalAlignment="Left" VerticalAlignment="Top"  Style="{StaticResource DefaultLabelStyleForCreateAccount}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <ComboBox x:Name="SpecialtyComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="SpecialtyComboBox_SelectionChanged" Style="{StaticResource DefaultComboBoxStyle}"/>
+                <DatePicker x:Name="AppointmentDatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" SelectedDateChanged="AppointmentDatePicker_SelectedDateChanged" Width="350" Height="35" Margin="0, 5, 0, 0"/>
+                <ComboBox x:Name="TimeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource DefaultComboBoxStyle}"/>
+                <TextBox x:Name="SnilsTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource DefaultTextBoxStyleForCreateAccount}"/>
+                <Button Content="Записаться на прием" HorizontalAlignment="Left" VerticalAlignment="Top" Click="SubmitAppointmentBtn_Click" Name="SubmitAppointmentBtn" Width="350" Height="40" Margin="0, 10, 0, 0" Style="{StaticResource DefaultButtonStyle}"/>
+                <Button Content="Печать талона" HorizontalAlignment="Left" VerticalAlignment="Top" Click="PrintTalonBtn_Click" Name="PrintTalonBtn" Width="350" Height="40" Margin="0, 10, 0, 0" Style="{StaticResource DefaultButtonStyle}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

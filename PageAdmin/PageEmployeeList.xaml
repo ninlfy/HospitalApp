@@ -1,0 +1,38 @@
+﻿<Page x:Class="HospitalApp.PageAdmin.PageEmployeeList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApp.PageAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Список сотрудников">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" >
+            <DataGrid x:Name="EmployeeDataGrid" AutoGenerateColumns="False"
+          RowHeight="50">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontFamily" Value="Tahoma"/>
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Padding" Value="5,10,5,10"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding FirstName}" Width="*"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="*"/>
+                    <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*"/>
+                    <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*"/>
+                    <DataGridTextColumn Header="Роль" Binding="{Binding RoleName}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Печать" Style="{StaticResource DefaultButtonStyle}" Width="350" Height="50" Margin="25" VerticalAlignment="Bottom" Name="PrintEmployeeListBtn" Click="PrintEmployeeListBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

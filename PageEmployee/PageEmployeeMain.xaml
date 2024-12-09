@@ -1,0 +1,19 @@
+﻿<Page x:Class="HospitalApp.PageEmployee.PageEmployeeMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApp.PageEmployee"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Главный экран">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, -75, 0, 0">
+            <Button Style="{StaticResource DefaultButtonStyle}" Width="450" Height="75" Margin="0, 10, 0, 10" Content="Запись на прием" Name="AdmissionBtn" Click="AdmissionBtn_Click"/>
+            <Button Style="{StaticResource DefaultButtonStyle}" Width="450" Height="75" Margin="0, 10, 0, 10" Content="Регистрация пациента" Name="PatientRegistrationBtn" Click="PatientRegistrationBtn_Click"/>
+            <Button Style="{StaticResource DefaultButtonStyle}" Width="450" Height="75" Margin="0, 10, 0, 10" Content="Статистика" Name="StatsBtn" Click="StatsBtn_Click"/>
+            <Button Style="{StaticResource DefaultButtonStyle}" Width="450" Height="75" Margin="0, 10, 0, 10" Content="Список пациентов" Name="PatientListBtn" Click="PatientListBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

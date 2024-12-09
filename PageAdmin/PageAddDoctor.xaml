@@ -1,0 +1,31 @@
+﻿<Page x:Class="HospitalApp.PageAdmin.PageAddDoctor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HospitalApp.PageAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Добавление врача">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 75, 0, 0">
+                <StackPanel Orientation="Vertical">
+                    <Label Style="{StaticResource DefaultLabelStyleForCreateAccount}" Content="Фамилия"/>
+                    <Label Style="{StaticResource DefaultLabelStyleForCreateAccount}" Content="Имя"/>
+                    <Label Style="{StaticResource DefaultLabelStyleForCreateAccount}" Content="Отчество"/>
+                    <Label Style="{StaticResource DefaultLabelStyleForCreateAccount}" Content="Специальность"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyleForCreateAccount}" Name="FirstNameTxtb"/>
+                    <TextBox Style="{StaticResource DefaultTextBoxStyleForCreateAccount}" Name="LastNameTxtb"/>
+                    <TextBox Style="{StaticResource DefaultTextBoxStyleForCreateAccount}" Name="PatronymicTxtb"/>
+                    <ComboBox Style="{StaticResource DefaultComboBoxStyle}" Name="SpecialyComboBox" DisplayMemberPath="SpecialyName" SelectedValuePath="Id"/>
+
+                    <Button Style="{StaticResource DefaultButtonStyle}" Content="Создать" Width="350" Height="50" Margin="0, 30, 0, 0" HorizontalAlignment="Center" Name="AddDoctorBtn" Click="AddDoctorBtn_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
